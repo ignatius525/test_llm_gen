@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@imiagkov/llms-gen": "^1.0.3"
-  }
+    "@imiagkov/llms-gen": "^1.0.6"
+  },
+  "type": "module"
 }
