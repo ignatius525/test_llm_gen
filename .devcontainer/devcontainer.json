@@ -1,0 +1,37 @@
+{
+  "name": "llms-gen Dev",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+
+  // Features to install (e.g. GitHub CLI, Docker-in-Docker if needed)
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  // Workspace-specific settings
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true,
+        "files.autoSave": "onFocusChange"
+      },
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-typescript-next",
+        "Orta.vscode-jest"
+      ]
+    }
+  },
+
+  // Commands to run after container creation
+  "postCreateCommand": "npm install",
+
+  // Forward Jest debugging ports if needed
+  "forwardPorts": [9229],
+
+  // Persist npm cache across restarts
+  "mounts": [
+    "source=${localEnv:HOME}/.npm,target=/home/node/.npm,type=bind,consistency=cached"
+  ]
+}
