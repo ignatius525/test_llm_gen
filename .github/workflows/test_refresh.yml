@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Generate llms.txt with for profound site automatically on push
-        uses: imiagkov/llms-gen/.github/actions/llms-gen@main
+        uses: ignatius525/llms-text-gen/.github/actions/llms-gen@main
         with:
           root-url: https://www.tryprofound.com
           output-dir: ./tryprofound
