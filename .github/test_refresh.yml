@@ -1,0 +1,12 @@
+jobs:
+  generate-llms:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate llms.txt with for profound site automatically on push
+        uses: imiagkov/llms-gen/.github/actions/llms-gen@main
+        with:
+          root-url: https://www.tryprofound.com
+          output-dir: ./tryprofound
+          max-pages: 1000
+          concurrency: 16
+          use-playwright: false
